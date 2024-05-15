@@ -4,6 +4,8 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsCompose)
+    id("app.cash.sqldelight") version "2.0.1"
+    kotlin("plugin.serialization") version "1.9.20"
 }
 
 kotlin {
@@ -38,10 +40,20 @@ kotlin {
         commonMain.dependencies {
             implementation(compose.runtime)
             implementation(compose.foundation)
-            implementation(compose.material)
+//            implementation(compose.material)
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
+            implementation(libs.kotlinx.datetime)
+            implementation("app.cash.sqldelight:runtime")
+            implementation(libs.sqldelight.coroutines.extensions)
+            implementation(compose.runtime)
+            implementation(compose.foundation)
+            implementation(compose.material3)
+            implementation(compose.materialIconsExtended)
+            implementation(libs.androidx.datastore.preferences.core)
+            implementation(libs.androidx.datastore.core.okio)
+            implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
