@@ -1,4 +1,4 @@
-package com.maxdev.strengthjourney
+package com.maxdev.strength_journey_fitness_app
 
 import App
 import android.os.Bundle
